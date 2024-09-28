@@ -2,7 +2,7 @@ import { Sequelize } from "sequelize";
 import EnvVars from "@src/constants/EnvVars";
 
 const sequelize = new Sequelize({
-  dialect: "mysql", // Or your preferred database dialect
+  dialect: "postgres",
   replication: {
     read: [
       {
@@ -19,6 +19,7 @@ const sequelize = new Sequelize({
       host: EnvVars.DB.HOST,
     },
   },
+  schema: 'test', // Explicitly set the schema
   logging: false,
 });
 

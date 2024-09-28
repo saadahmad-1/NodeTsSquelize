@@ -13,7 +13,7 @@ class Image extends Model {
     public comments?: string[]; // Comments related to the image
 }
 
-// Define the image model
+// Define the image model for PostgreSQL
 Image.init({
     url: {
         type: DataTypes.STRING,
@@ -44,11 +44,12 @@ Image.init({
         allowNull: false,
     },
     comments: {
-        type: DataTypes.ARRAY(DataTypes.STRING),  // Storing comments as an array
+        type: DataTypes.ARRAY(DataTypes.STRING), // Storing comments as an array (specific to PostgreSQL)
         allowNull: true,
     },
 }, {
     sequelize,
+    schema: 'test',   // Reference the correct schema
     tableName: 'images',
     timestamps: true, // Optional: adds createdAt and updatedAt fields
 });

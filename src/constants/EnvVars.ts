@@ -36,6 +36,7 @@ export const knectServiceConfigs: any = {
     verifyOneTimeTransaction: env.KENCT_SERVICE_APIS_verifyOneTimeTransactions,
   },
 };
+
 export const waleeConfigs: any = {
   endPoints: {
     voucherList: env.WALEE_VOUCHER_LIST,
@@ -50,11 +51,11 @@ export default {
   NodeEnv: env.NODE_ENV ?? "",
   Port: env.PORT ?? 0,
   DB: {
-    DATABASE: env.DATABASE ?? "VP_Service",
-    HOST: env.DB_HOST ?? "127.0.0.1",
-    PORT: env.DB_PORT ?? "3606",
-    USERNAME: env.DB_USERNAME ?? "root",
-    PASSWORD: env.DB_PASSWORD ?? "root",
-    READER_HOST: env.DB_READER_HOST ?? "127.0.0.1",
+    DATABASE: env.DATABASE ?? "postgres", // Ensure this is set to your PostgreSQL database name
+    HOST: env.DB_HOST ?? "127.0.0.1", // Host for PostgreSQL
+    PORT: env.DB_PORT ?? "5432", // Default PostgreSQL port
+    USERNAME: env.DB_USERNAME ?? "postgres", // Default PostgreSQL username
+    PASSWORD: env.DB_PASSWORD ?? "root", // Password for PostgreSQL
+    READER_HOST: env.DB_READER_HOST ?? "127.0.0.1", // Reader host if applicable
   },
 } as const;
